@@ -1,0 +1,16 @@
+div.admin
+  div.row.adminbody style="width: 50%; margin: 0 auto; margin-top: 200px;"
+   div.adminpage style="margin-top: 100px;"
+   div.col-md-4 
+	div.icon
+	  i.fa.fa-users
+	= link_to "Student", students_path, class: "btn btn-primary"
+   div.col-md-4  
+	div.icon
+	  i.fa.fa-book
+	= link_to "Subject", subjects_path, class: "btn btn-primary"
+   div.col-md-4  
+	div.icon
+	  i.fa.fa-university
+	= link_to "Teacher", teachers_path, class: "btn btn-primary"
+

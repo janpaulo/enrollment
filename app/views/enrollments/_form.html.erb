@@ -1,0 +1,118 @@
+<%= form_with(model: enrollment, local: true) do |form| %>
+ 
+
+<div class="formstudent">
+  <% if enrollment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enrollment.errors.count, "error") %> prohibited this enrollment from being saved:</h2>
+
+      <ul>
+      <% enrollment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!--  <div class="form-group">
+   <!--  <%= form.label :student_id %>
+    <%= form.number_field :student_id %> 
+  </div> -->
+
+      <div class="row studentform">
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :First_name %>
+            </div>
+            <div class="control-label">
+            <%= form.text_field :fname %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Last_name %>
+            </div>
+            <div class="control-label">
+              <%= form.text_field :lname %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Mobile_No %>
+          </div>
+            <div class="control-label">
+              <%= form.text_field :mobile %>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Course %>
+            </div>
+            <div class="control-label">
+              <%= form.text_field :course %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Sem_no %>
+            </div>
+            <div class="control-label">
+              <%= form.text_field :sem_no %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Year %>
+            </div>
+            <div class="control-label">
+              <%= form.text_field :year %>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Birthday %>
+            </div>
+            <div class="control-label">
+              <%= form.text_field :birthday %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Address %>
+          </div>
+            <div class="control-label">
+            <%= form.text_field :address %>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <div class="control-label">
+            <%= form.label :Birth_place %>
+            </div>
+            <div class="control-label">
+              <%= form.text_field :birth_place %>
+            </div>
+          </div>
+
+          <div class="actions">
+            <%= form.submit %>
+            <%= link_to "Student", enrollments_path %>
+
+          </div>
+
+
+<% end %>
+</div>
+<div class="sss pic3">
+                <img src="/assets/6-2.jpg" height="500px">
+              </div>
+
+
+</div>

@@ -1,0 +1,23 @@
+#notice = notice
+div.titlenew
+  h1 Classrooms
+  table
+    thead
+      tr
+        th Room one
+        th Room two
+        th Room three
+        th Room four
+        th colspan="3"
+    tbody
+      - @classrooms.each do |classroom|
+        tr
+          td = classroom.room_one
+          td = classroom.room_two
+          td = classroom.room_three
+          td = classroom.room_four
+          td = link_to 'Show', classroom
+          td = link_to 'Edit', edit_classroom_path(classroom)
+          td = link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Classroom', new_classroom_path

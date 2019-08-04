@@ -1,0 +1,451 @@
+<h3>Subjects</h3>
+  <div class="subjectshow">
+     <span class="col-md-3" ><b>Subject Code</b></span>
+     	 <span class="label-form" >MATH101</span><br>
+     	 <span class="label-form" >SCIE101</span><br>
+     	 <span class="label-form" >FIL101</span><br>
+     	 <span class="label-form" >ENG101</span><br>
+     	 <span class="label-form" >ITC</span><br>
+
+     <span class="col-md-3" ><b>Subjec Decription</b></span>
+     	<span class="label-form" >MATHEMATICS</span><br>
+     	 <span class="label-form" >SCIENCE</span><br>
+     	 <span class="label-form" >FILIFINO</span><br>
+     	 <span class="label-form" >COMMUNICATION</span><br>
+     	 <span class="label-form" >COMPUTER PROGRAM</span><br>
+     <span class="col-md-3" ><b>Time</b></span>
+     	 <span class="label-form" >08:00-09:30AM</span><br>
+     	 <span class="label-form" >10:30-12:0NN</span><br>
+     	 <span class="label-form" >01:30-03:30PM</span><br>
+     	 <span class="label-form" >9:30-12:00PM</span><br>
+     	 <span class="label-form" >02:00-03:30PM</span><br>
+     <span class="col-md-3" ><b>Day</b></span>
+     	 <span class="label-form" >MWF</span><br>
+     	 <span class="label-form" >MWF</span><br>
+     	 <span class="label-form" >MWF</span><br>
+     	 <span class="label-form" >TTHS</span><br>
+     	 <span class="label-form" >TTHS</span><br>
+
+  </div>
+
+  $('#sections').on('change', function(){
+
+     if(this.value == "sec1"){
+          $('#bsit').show();
+          $('bsit2').hide();
+     }else {
+          $('#bsit').hide();
+          $('bsit2').show();
+     }
+});
+
+
+
+
+<%= render @student.subjects %>
+
+<%= form_with(model: [ @student, @student.subjects.build ]) do |form| %>
+  
+<div class="subjectbody">
+<div class="row subject" >
+  <div class="formsubject" >
+    <p id="notice"><%= notice %></p>
+   <h2>Add a Subjects:</h2>
+
+        <div class="col-md-8">
+          <span class="label-form" >Student id:</span><br><br>
+          <span class="form-label"><%= @student.student_id %>
+        </div>
+
+
+        <div class="col-md-4 select-label">
+            <%= form.label "Course:", class: "label-form" %>
+            
+             <div class="course">
+            <%= form.select(:subject, options_for_select([["BSIT", "subject_name"], ["BSCS", "Pre-owned"], ["BS ed", "Pre-owned"]]), :include_blank => true, :selected => params[:subject]) %>
+            </div> 
+        </div>
+
+        <div class="col-md-8">
+          <span class="label-form" >Name:</span><br><br>
+          <span class="form-label"><%= @student.fname %> <%= @student.mname %> <%= @student.lname %>
+        </div>
+
+          <div class="col-md-4 select-label">
+            <%= form.label "Year_Level:", class: "label-form" %>
+            
+             <div class="year">
+            <%= form.select(:subject, options_for_select([["1st", "subject_name"], ["2nd", "Pre-owned"], ["3rd", "Pre-owned"], ["4th", "Pre-owned"]]), :include_blank => true, :selected => params[:subject]) %>
+            </div> 
+          </div>
+
+  
+        <div class="col-md-12" style="width: 66%;">
+          <%= form.label "School_year:", class: "label-form"  %><br>
+          <%= form.text_field :subject_decription, class: "form-label" %>
+        </div>
+
+        <div class="select-label">
+           <%= form.label "Section:", class: "label-form" %>
+
+            <script src="https://code.jquery.com/jquery- 1.12.4.min.js"></script>
+                <script type="text/javascript">
+                $('document').ready(function(){
+                    $('select').change(function(){
+                        $(this).find("option:selected").each(function(){
+                            var optionValue = $(this).attr("value");
+                            if(optionValue){
+                                $(".box").not("."+ optionValue).hide();
+                                $("."+optionValue).show();
+
+                            }else{
+                                $('.box').hide();
+                            }
+                        });
+                    }).change();
+                });
+
+                </script>
+  <div class="section">
+            <select>
+              <option value="">choose section</option>
+              <option value="sec1">SECTION 1</option>
+              <option value="blue">SECTION 2</option>
+              <option value="green">SECTION 3</option>
+            </select>
+        </div>
+
+        <div class="sec1 box">
+            <table align="center" border="1px" width="60%">
+                <h3 align="center">SECTION 1</h3>
+
+                  <thead>
+                    <tr>
+                      <th>Subject Code</th>
+                      <th>Subjec Decription</th>
+                      <th>Time</th>
+                      <th>Time</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                        <td> 
+                         <span>MATH101</span><br>
+                         <span>SCIE101</span><br>
+                         <span>FIL101</span><br>
+                         <span>ENG101</span><br>
+                         <span>ITC</span><br></td>
+                        <td> 
+                         <span>MATHEMATICS</span><br>
+                         <span>SCIENCE</span><br>
+                         <span>FILIFINO</span><br>
+                         <span>COMMUNICATION</span><br>
+                         <span>COMPUTER PROGRAM</span><br></td>
+                         <td> 
+                         <span>08:00-09:30AM</span><br>
+                         <span>10:30-12:0NN</span><br>
+                         <span>01:30-03:30PM</span><br>
+                         <span>9:30-12:00PM</span><br>
+                         <span>02:00-03:30PM</span><br></td>
+                        <td> 
+                         <span>MWF</span><br>
+                         <span>MWF</span><br>
+                         <span>MWF</span><br>
+                         <span>TTHS</span><br>
+                         <span>TTHS</span><br>
+                        </td>
+                     </tr>
+                 </tbody>
+            </table>
+        </div>
+    <div class="blue box">
+        <table align="center" border="1px" width="60%">
+          <h3 align="center">SECTION 2</h3>
+
+          <thead>
+            <tr>
+              <th>Subject Code</th>
+              <th>Subjec Decription</th>
+              <th>Time</th>
+              <th>Time</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+                <td> 
+                 <span>MATH101</span><br>
+                 <span>SCIE101</span><br>
+                 <span>FIL101</span><br>
+                 <span>ENG101</span><br>
+                 <span>ITC</span><br></td>
+                <td> 
+                 <span>MATHEMATICS</span><br>
+                 <span>SCIENCE</span><br>
+                 <span>FILIFINO</span><br>
+                 <span>COMMUNICATION</span><br>
+                 <span>COMPUTER PROGRAM</span><br></td>
+                 <td> 
+                 <span>08:00-09:30AM</span><br>
+                 <span>10:30-12:0NN</span><br>
+                 <span>01:30-03:30PM</span><br>
+                 <span>9:30-12:00PM</span><br>
+                 <span>02:00-03:30PM</span><br></td>
+                <td> 
+                 <span>MWF</span><br>
+                 <span>MWF</span><br>
+                 <span>MWF</span><br>
+                 <span>TTHS</span><br>
+                 <span>TTHS</span><br>
+                </td>
+             </tr>
+         </tbody>
+        </table>
+    </div>
+        <div class="green box">
+            <table align="center" border="1px" width="60%">
+                <h3 align="center">SECTION 3</h3>
+
+                  <thead>
+                    <tr>
+                      <th>Subject Code</th>
+                      <th>Subjec Decription</th>
+                      <th>Time</th>
+                      <th>Time</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                        <td> 
+                         <span>MATH101</span><br>
+                         <span>SCIE101</span><br>
+                         <span>FIL101</span><br>
+                         <span>ENG101</span><br>
+                         <span>ITC</span><br></td>
+                        <td> 
+                         <span>MATHEMATICS</span><br>
+                         <span>SCIENCE</span><br>
+                         <span>FILIFINO</span><br>
+                         <span>COMMUNICATION</span><br>
+                         <span>COMPUTER PROGRAM</span><br></td>
+                         <td> 
+                         <span>08:00-09:30AM</span><br>
+                         <span>10:30-12:0NN</span><br>
+                         <span>01:30-03:30PM</span><br>
+                         <span>9:30-12:00PM</span><br>
+                         <span>02:00-03:30PM</span><br></td>
+                        <td> 
+                         <span>MWF</span><br>
+                         <span>MWF</span><br>
+                         <span>MWF</span><br>
+                         <span>TTHS</span><br>
+                         <span>TTHS</span><br>
+                        </td>
+                     </tr>
+                 </tbody>
+            </table>
+          </div>
+
+         </div>
+         <!--    <%= form.select(:subject, options_for_select([["BSIT1", "subject_name"], ["BSIT2", "Pre-owned"]]), :include_blank => true, :selected => params[:subject]) %> -->
+        
+       
+
+
+
+
+<div class="subjectlist">
+        <div class="col-md-3">
+          <%= form.label "Subject_code:", class: "label-form"  %><br>
+          <%= form.text_field :subject_name, class: "form-label" %>
+        </div>
+
+         <div class="col-md-3">
+          <%= form.label "Subject_description:", class: "label-form"  %><br>
+          <%= form.text_field :subject_decription, class: "form-label" %>
+        </div>
+
+         <div class="col-md-3">
+          <%= form.label "Day:", class: "label-form"  %><br>
+          <%= form.text_field :day, class: "form-label" %>
+        </div>
+
+         <div class="col-md-3">
+          <%= form.label "Time:", class: "label-form"  %><br>
+          <%= form.text_field :time, class: "form-label" %>
+        </div>
+
+  </div> 
+  <div class="buttonss">
+  
+  <div class="col-md-6">
+        <div class="actions">
+    <%= form.submit data: { confirm: "Are you sure you want to save this information" }, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="col-md-6">
+
+    <%= link_to "Back", authenticated_root_path, data: { confirm: "Are you sure you want to close this information" }, class: "btn btn-primary" %>
+  </div>
+</div>
+  <% end %>
+</div>
+</div>
+
+</div>
+
+<!-- 
+          <%= form.select :subject, options_from_collection_for_select(Subject.all.sort_by(&:subject_name), :id, :subject_name, form.object.id), {}, include_blank: true, multiple: true%> -->
+
+
+
+
+
+
+
+<%= form_for @subject, html: {multiple: true} do |form| %>
+  <% if subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+      <% subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- 
+<select id="student" name="" onchange="javascript:location.href = this.value;">
+     <option value="/"></option>
+     <option value="/students/new">Option1</option>
+    <option value="https://www.google.co.in/">Option2</option>
+    <option value="https://www.gmail.com/">Option3</option>
+
+</select>
+
+ -->
+
+
+<div class="subjectbody">
+<div class="row subject" >
+  <div class="formsubject" >
+    <p id="notice"><%= notice %></p>
+ <p>
+ <!--  <% @subject.students.each do |student| %>
+
+
+    <%= student.fname %> 
+<%end%> -->
+</p>
+    
+        <div class="col-md-12 select-label">
+            <%= form.label "Course:", class: "label-form" %>
+            
+             <div class="course">
+            <%= form.select(:subject, options_for_select([["BSIT", "subject_name"], ["BSCS", "Pre-owned"], ["BS ed", "Pre-owned"]]), :include_blank => true, :selected => params[:subject]) %>
+            </div> 
+        </div>
+
+
+
+        <div class="col-md-8">
+          <%= form.label "Name:", class: "label-form" %><br>
+          <%#= form.select :student_ids, options_from_collection_for_select(@students.where.not(fname: [nil, ""]), :id, :fname, form.object.student_ids) %>
+          <%#= form.text_field :fname, class: "form-label" , required: true%>
+          <%#= form.select :student_ids, options_for_select(@students.collect{ |x| [ x.fname, x.id] }) %>
+          <%#= form.select(:student, options_for_select(@students.collect{ |x| [ x.fname, x.id] }), :include_blank => true, :selected => params[:student]) %>
+      <!--   
+      <%= select_tag "students", options_from_collection_for_select(Student.all, 'id', 'fname'), :multiple => true %> -->
+
+        <%= form.select :student_ids, Student.all.collect {|x| [x.fname, x.id]}, {}, :multiple => true %>
+
+        </div>
+
+
+        <div class="col-md-4 select-label">
+            <%= form.label "Year_Level:", class: "label-form" %>
+            
+             <div class="year">
+            <%= form.select(:subject, options_for_select([["1st", "subject"], ["2nd", "subject"], ["3rd", "subject"], ["4th", "subject"]]), :include_blank => true, :selected => params[:subject]) %>
+            </div> 
+        </div>
+
+  
+        <div class="col-md-8">
+          <%= form.label "School_year:", class: "label-form"  %><br>
+          <%= form.text_field :subject_decription, class: "form-label" %>
+        </div>
+
+        <div class="col-md-4 select-label">
+           <%= form.label "Section:", class: "label-form" %>
+          <div class="section">
+            <%= form.select(:subject, options_for_select([["Section1", "subject"], ["Section2", "subject"]]), :include_blank => true, :selected => params[:subject]) %>
+          </div>
+        </div>
+
+
+
+       <div class="subjectlist">
+        <div class="col-md-3">
+          <%= form.label "Subject_code:", class: "label-form"  %><br>
+          <%= form.text_field :subject_name, class: "form-label" %>
+        
+        </div>
+
+         <div class="col-md-3">
+          <%= form.label "Subject_description:", class: "label-form"  %><br>
+          <%= form.text_field :subject_decription, class: "form-label" %>
+        </div>
+
+         <div class="col-md-3">
+          <%= form.label "Day:", class: "label-form"  %><br>
+          <%= form.text_field :day, class: "form-label" %>
+        </div>
+
+         <div class="col-md-3">
+          <%= form.label "Time:", class: "label-form"  %><br>
+          <%= form.text_field :time, class: "form-label" %>
+        </div>
+
+  </div> 
+  <div class="buttonss">
+  
+  <div class="col-md-6">
+        <div class="actions">
+    <%= form.submit data: { confirm: "Are you sure you want to save this information" }, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="col-md-6">
+
+    <%= link_to "Back", authenticated_root_path, data: { confirm: "Are you sure you want to close this information" }, class: "btn btn-primary" %>
+  </div>
+</div>
+  <% end %>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

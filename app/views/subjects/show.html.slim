@@ -1,0 +1,89 @@
+.titlenew
+  h1 Subject Details
+#notice = notice
+
+.subjectbody
+  .row.subject
+    .formsubject
+      .col-md-6
+        span.label-form
+          strong Subject name:
+          br
+        span.form-label
+          = @subject.subject_name
+      .col-md-6
+        span.label-form
+          strong Sbject description:
+        br 
+        span.form-label
+          = @subject.sbject_description
+   
+      .col-md-6
+        span.label-form
+          strong Time:
+        br
+        span.form-label
+          = @subject.time
+   
+      .col-md-6
+        span.label-form
+          strong Day:
+        br
+        span.form-label
+          = @subject.day
+   
+      .col-md-6
+        span.label-form
+          strong Course:
+        br
+        span.form-label
+          = @subject.course
+   
+      .col-md-6
+        span.label-form
+          strong School year:
+        br
+        span.form-label
+          = @subject.school_year
+   
+      .col-md-6
+        span.label-form
+          strong Year lvl:
+        br
+        span.form-label
+          = @subject.year_lvl
+   
+      .col-md-6
+        span.label-form
+          strong Section:
+        br
+        span.form-label
+          = @subject.section
+   
+
+      table width="70%"
+        thead
+          tr
+            th Student name
+        tbody
+        tr
+          - @subject.students.each do |s|
+            tr
+              td = s.full_name
+      
+
+        table width="70%"
+          thead
+            tr
+              th Student name
+          tbody
+          tr
+            - @subject.teachers.each do |s|
+                tr
+                  td = s.teacher_name
+      .buttonss
+        .col-md-6
+          = link_to 'Edit', edit_subject_path(@subject), class: "btn btn-primary"
+        .col-md-6
+          = link_to 'Back', subjects_path, class: "btn btn-primary"
+    

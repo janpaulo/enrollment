@@ -1,0 +1,494 @@
+
+/***********************************************************************
+*  OPAQUE NAVBAR SECTION
+***********************************************************************/
+.opaque-navbar {
+    background-color: rgba(0,0,0,0.5);
+  /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+    height: 60px;
+    border-bottom: 0px;
+    transition: background-color .5s ease 0s;
+}
+
+.opaque-navbar.opaque {
+    background-color: black;
+    height: 60px;
+    transition: background-color .5s ease 0s;
+}
+
+ul.dropdown-menu {
+    background-color: black;
+}
+
+
+@media (max-width: 992px) {
+  body
+  {
+    background:red;
+  }
+  .opaque-navbar {
+    background-color: black;
+    height: 60px;
+    transition: background-color .5s ease 0s;
+}
+
+}
+.navbar-inverse .navbar-brand {
+    font-size: 30px;
+    color: #b36218 !important;
+    font-family: initial !important;
+}
+
+
+/*about*/
+
+
+.about1{
+
+  margin-top: -10px !important;
+   
+   margin-right: 0 !important;
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: space-between;
+}
+.container1{
+    width: 100%;
+    min-height: 600px !important;
+}
+
+.pic3 img{
+  
+    min-height: 631px !important;
+        margin-top: 100px;
+}
+
+.sss h1, h3, p{
+    margin-top: 10px;
+    
+}
+
+.about1 h1{
+  font-family: 'Playfair Display', serif;
+  color: #c18f59;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 300px;
+}
+
+.quality{
+  font-family: 'Playfair Display', serif;
+  color: #000000 !important;
+  font-weight: 500;
+  font-size: 50px;
+}
+.sss{
+  text-align: center;
+}
+p{
+      font-size: 16px;
+}
+
+.sss .btn{
+
+  margin-top: 30px !important;
+}
+
+
+
+.titlenew{
+  margin-top: 100px !important;
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+
+.title{
+
+  text-align: center; 
+  font-family: cursive;
+  font-size:48px;
+}
+
+sup {
+            font-size: 26% !important;
+    line-height: 0;
+    position: relative !important;
+    vertical-align: baseline;
+    margin-left: -26px;
+    top: -2.5em !important;
+    color: #1f2b35;
+    font-family: monospace;
+}
+
+
+
+
+/*student form*/
+
+
+.formstudent {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+    border: 10px solid #fdfafa;
+    font-family: AvenirNextCondensed-DemiBold, Corbel, "Lucida Grande","Trebuchet Ms", sans-serif;
+}
+
+.row.forminfo {
+    width: 70%;
+    margin: 0 auto;
+        border: 1px solid #ceb6b8;
+}
+
+.forminfo .form-label{
+
+      width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #94707233;
+    display: inline-block;
+    margin-bottom: 10px !important;
+    background: transparent;
+}
+
+.forminfo .label-form{
+  margin-top: 10px !important;
+      font-family: fantasy;
+    font-weight: 700;
+    font:inherit !important;
+
+
+}
+
+.formcon {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px!important;
+}
+
+.buttonss .btn{
+
+  margin-top: 20px !important;
+  margin-bottom: 20px;
+}
+
+
+.buttonss {
+    width: 70%;
+  
+    margin: 0 auto;
+    margin-left: 150px;
+}
+
+.formbody{
+
+  background-image: asset-url('background.jpg');
+  height: auto;
+}
+
+
+
+
+
+
+
+
+/*subject*/
+
+
+.row.subject {
+    width: 80% !important;
+    margin: 0 auto !important;
+    border: 1px solid #ceb6b8;
+    margin-right: 0px;
+    margin-left: 0px;
+
+  }
+
+
+.formsubject {
+    width: 80%!important;
+    margin: 0 auto;
+    margin-top: 50px!important;
+    margin-bottom: 30px!important;
+}
+
+
+.formsubject .label-form{
+  margin-top: 10px !important;
+      font-family: fantasy;
+    font-weight: 700;
+
+
+}
+
+.formsubject .form-label{
+
+    width: 60%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #94707233;
+    display: inline-block;
+    margin-bottom: 10px !important;
+    background: transparent;
+}
+
+.select-label{
+
+margin-top: 30px!important;
+
+}
+.course {
+    margin-left: 20px !important;
+    display: initial;
+  }
+
+
+.year {
+    margin-left: 10px !important;
+    display: initial;
+  }
+
+
+.section {
+    margin-left: 20px !important;
+    display: initial;
+  }
+
+.subjectbody{
+
+  background-image: asset-url('background.jpg');
+  min-height: 600px;
+}
+
+
+.showsub {
+ 
+
+
+}
+
+.showing{
+
+  background-image: asset-url('background.jpg')!important;
+  min-height: 600px;
+}
+
+.showsubject{
+   width: 80% !important;
+    margin: 0 auto !important;
+    border: 1px solid #ceb6b8;
+    margin-right: 0px;
+    margin-left: 0px;
+    min-height: 150px;
+  
+}
+
+.subjects-details{
+   text-align: center;
+   font-size: 35px;
+}
+
+.subjectlist{
+  width: 85%!important;
+  margin-top: 50px!important;
+}
+
+.box{
+    color: black;
+    padding: 20px;
+    display: none;
+    margin-top: 20px;
+
+}
+
+
+
+/* login */
+
+
+
+.loginbody {
+  background-image: asset-url('background.jpg');
+  min-height: 612px;
+  margin-top: 50px;
+}
+
+.row.login {
+    width: 40%;
+    margin: 0 auto;
+        border: 1px solid #ceb6b8;
+}
+
+/*.row.login{
+   width: 45% !important;
+    margin: 0 auto !important;
+    border: 1px solid #ceb6b8;
+    margin-right: 0px;
+    margin-left: 0px;
+    min-height: 50%;
+
+}*/
+
+.formlogin .form-label{
+
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #94707233;
+    display: inline-block;
+    margin-bottom: 10px !important;
+    background: transparent;
+}
+
+
+.formlogin {
+    width: 80%!important;
+    margin: 0 auto;
+    margin-top: 50px!important;
+    margin-bottom: 30px!important;
+}
+
+
+.formlogin .label-form{
+  margin-top: 10px !important;
+      font-family: fantasy;
+    font-weight: 700;
+
+
+}
+
+.logbutton .btn.btn-primary {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: block;
+    justify-content: right;
+    margin-left: 300px;
+}
+
+.welcome{
+       font-size: 36px;
+    /* font-weight: 900; */
+    text-align: center;
+    color: darkgoldenrod;
+    font-family: cursive;
+  }
+
+.welcome sup {
+        font-size: 37% !important;
+    line-height: 0;
+    position: relative !important;
+    vertical-align: baseline;
+    margin-left: 2px;
+    top: -1.5em !important;
+    color: #75433a;
+font-family: cursive;
+}
+
+
+/* collect-label*/
+
+
+
+.collect-label{
+  width: 90%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #94707233;
+    display: inline-block;
+    margin-bottom: 10px !important;
+    background: transparent;
+    min-height: 200px;
+}
+
+.student-teacher{
+
+      width: 100% !important;
+    margin: 0 auto;
+}
+
+
+
+
+/*Student-photo*/
+
+
+.student-photo{
+    border-radius: 50%;
+    display: block;
+    height: 150px;
+    width: 180px;
+    margin: 0 auto;
+
+
+}
+
+
+.current-pic {
+    border-radius: 50%;
+    /* display: block; */
+    height: 80px;
+    width: 100px;
+    /* margin: 0 auto; */
+}
+
+
+
+/* admin*/
+
+.admin{
+
+  width: 100%;
+  min-height: 550px;
+  background-image: asset-url('background.jpg')!important;
+}
+
+
+
+.icon {
+    font-size: 35px;
+    margin: 0 auto;
+    margin-left: 20px;
+    height: 70px;
+}
+
+
+
+select#student_subject_ids {
+    height: 174px;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+
+.img-circle{
+  width: 36px;
+ height: 30px;  
+ margin-right: 4px;
+}
+
+.actions{
+  margin-bottom:20px !important;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require bootstrap.min
+ *= require font-awesome
+ *= require_self
+ */

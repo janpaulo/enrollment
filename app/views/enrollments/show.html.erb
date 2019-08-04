@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @enrollment.student_id %>
+</p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @enrollment.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @enrollment.lname %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @enrollment.mobile %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @enrollment.course %>
+</p>
+
+<p>
+  <strong>Sem no:</strong>
+  <%= @enrollment.sem_no %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @enrollment.year %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @enrollment.birthday %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @enrollment.address %>
+</p>
+
+<p>
+  <strong>Birth place:</strong>
+  <%= @enrollment.birth_place %>
+</p>
+
+<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
+<%= link_to 'Back', enrollments_path %>

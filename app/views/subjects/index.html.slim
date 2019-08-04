@@ -1,0 +1,32 @@
+#notice = notice
+.titlenew
+  h1 Subject Details
+table align="center" border="0px" width="80%"
+  thead
+    tr
+      th Subject name
+      th Sbject description
+      th Time
+      th Day
+      th Course
+      th School year
+      th Year lvl
+      th Section
+      th colspan="3"
+  tbody
+    - @subjects.each do |subject|
+      tr
+        td = subject.subject_name
+        td = subject.sbject_description
+        td = subject.time
+        td = subject.day
+        td = subject.course
+        td = subject.school_year
+        td = subject.year_lvl
+        td = subject.section
+        td = link_to 'Show', subject
+        td = link_to 'Edit', edit_subject_path(subject)
+        td = link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
+.butt align="center"
+  br 
+  = link_to 'New Subject', new_subject_path, class: "btn btn-primary" 

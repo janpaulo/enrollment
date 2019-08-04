@@ -1,0 +1,13 @@
+#notice = notice
+.titlenew
+  h1 Profile
+- if @profile.avatar.attached?
+  = image_tag url_for(@profile.avatar), class: "student-photo"
+p
+  strong Firstname:  
+  = @profile.first_name   if @profile.first_name.present?
+p
+  strong Lastname: 
+  = @profile.last_name if @profile.last_name.present?
+
+

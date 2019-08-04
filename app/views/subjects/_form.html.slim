@@ -1,0 +1,53 @@
+= form_for @subject, :html => {:multiple => true} do |form|
+  - if subject.errors.any?
+    #error_explanation
+      h2 = pluralize(subject.errors.count, "error")
+      | prohibited this subject from being saved:
+
+    ul
+      - subject.errors.full_messages.each do |message|
+        li 
+          = message
+      
+  .subjectbody
+    .row.subject
+      .formsubject
+        #notice = notice
+        .col-md-12
+          = form.label :Classroom
+          br
+          = form.select :classroom_ids, Classroom.all.collect {|x| [x.room_one, x.id, class: "label-form" ]}, {}, :multiple => true, class: "form-label"
+        .col-md-6
+          = form.label :Course, class: "label-form"
+          br
+          = form.select :course, [["BSIT", "BSIT"], ["BSCS", "BSCS"], ["BS ed", "BS ed"]]
+        .col-md-6
+          = form.label :school_year, class: "label-form"
+          br
+          = form.number_field :school_year , class: "form-label"
+        .col-md-6
+          = form.label :Year_level, class: "label-form"
+          br
+          = form.select :year_lvl, [["1st", "1st"], ["2nd", "2nd"], ["3rd", "3rd"], ["4th", "3rd"]], class: "form-label"
+        .col-md-6
+          = form.label :section, class: "label-form"
+          br
+          = form.text_field :section, class: "form-label"
+        .col-md-3
+          = form.label :subject_name, class: "label-form"
+          br
+          = form.text_field :subject_name, class: "form-label"
+        .col-md-3
+          = form.label :sbject_description, class: "label-form"
+          br
+          = form.text_field :sbject_description, class: "form-label"
+        .col-md-3
+          = form.label :time, class: "label-form"
+          br
+          = form.text_field :time, class: "form-label"
+        .col-md-3
+          = form.label :day, class: "label-form"
+          br
+          = form.text_field :day, class: "form-label"
+        .actions
+          = form.submit

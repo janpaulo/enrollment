@@ -1,0 +1,86 @@
+= form_with(model: @student, local: true) do |form|
+  - if @student.errors.any?
+    #error_explanation
+      h2 = pluralize(@student.errors.count, "error") 
+      | prohibited this student from being saved:
+    ul
+      - @student.errors.full_messages.each do |message|
+        li
+          = message
+
+  .formbody
+    .logbody
+      .row.forminfo
+        .formcon
+          .col-md-4
+            = form.label :First_name, class: "label-form"
+            br
+            = form.text_field :fname, required: true,class: "form-label"
+          .col-md-4
+            = form.label :Middle_Name, class: "label-form"
+            br
+            = form.text_field :mname, required: true,class: "form-label"
+          .col-md-4
+            = form.label :Last_Name, class: "label-form"
+            br
+            = form.text_field :lname, required: true,class: "form-label"
+          .col-md-3
+            = form.label :Gender, class: "label-form"
+            br
+            = form.select :gender, [["Male", "Male"], ["Female", "Female"]],class: "form-label"
+          .col-md-3
+            = form.label :birthday, class: "label-form"
+            br
+            = form.date_field :birthday, required: true,class: "form-label"
+          .col-md-3
+            = form.label :birth_place , class: "label-form"
+            br
+            = form.text_field :birth_place, required: true, class: "form-label"
+          .col-md-3
+            = form.label :Contact_Number, class: "label-form"
+            br
+            = form.number_field :mobile,placeholder: 'xxx-xxx-xxxx', class: "form-label"
+          .col-md-12
+            = form.label :address, class: "label-form"
+            br
+            = form.text_field :address, class: "form-label"
+          .col-md-6
+            = form.label :Mother_name, class: "label-form"
+            = form.text_field :mother_name, required: true, class: "form-label"
+          .col-md-6
+            = form.label "Occupation:", class: "label-form"
+            = form.text_field :mother_occupation, required: true, class: "form-label"
+          .col-md-6
+            = form.label :father_name, class: "label-form"
+            = form.text_field :fathe_name, required: true, class: "form-label"
+          .col-md-6
+            = form.label "Occupation:", class: "label-form"
+            = form.text_field :father_occupation, required: true, class: "form-label"
+          .col-md-12
+            = form.label :address, class: "label-form"
+            br
+            = form.text_field :address, class: "form-label"
+          .col-md-6
+            = form.label :Gardian_name, class: "label-form"
+            = form.text_field :gaurdian_name, required: true, class: "form-label"
+          .col-md-6
+            = form.label "Gaurdian Number:", class: "label-form"
+            br
+            = form.number_field :gaurdian_num, class: "form-label"
+          .col-md-12
+            = form.label "Photo:", class: "label-form"
+            br
+            = form.file_field :avatar, class: "form-label"
+          .Subject-item
+            h3 Choose Subject
+          .col-md-12
+            = form.select :subject_ids, options_from_collection_for_select(Subject.all.sort_by(&:all_subject), :id, :all_subject, form.object.subject_ids), {}, include_blank: true, multiple: true, class: "collect-form"
+          .buttonss
+            .col-md-6
+              .actions
+                = form.submit data: { confirm: "Are you sure you want to save this information" }, class: "btn btn-primary"
+            .col-md-6
+            = link_to "Back", authenticated_root_path, data: { confirm: "Are you sure you want to close this information" }, class: "btn btn-primary"
+            
+
+

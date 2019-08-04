@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject_name: MyString
+  sbject_description: MyString
+  time: MyString
+  day: MyString
+  course: MyString
+  school_year: 1
+  year_lvl: MyString
+  section: MyString
+
+two:
+  subject_name: MyString
+  sbject_description: MyString
+  time: MyString
+  day: MyString
+  course: MyString
+  school_year: 1
+  year_lvl: MyString
+  section: MyString

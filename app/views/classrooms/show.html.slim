@@ -1,0 +1,20 @@
+#notice = notice
+.titlenew
+  h1 Show Classroom
+p 
+  strong Room one:
+  = @classroom.room_one
+
+p
+  strong Room two:
+  = @classroom.room_two
+p
+  strong Room three:
+  = @classroom.room_three
+p
+  strong Room four:
+  = @classroom.room_four
+
+= link_to 'Edit', edit_classroom_path(@classroom)
+|  |
+= link_to 'Back', classrooms_path

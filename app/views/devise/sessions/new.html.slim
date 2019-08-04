@@ -1,0 +1,30 @@
+.welcome
+  h1 Welcome To CD <sup>asia</sup> University
+.loginbody
+  .row.login
+    .formlogin
+      #notice = notice
+      p.alert
+        = alert
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .title
+            i.fa.fa-user-circle aria-hidden="true"
+            h1 Log in
+          .col-md-12
+            = f.label :email, class: "label-form"
+            br
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-label",placeholder: ' juandelacruz@gmail.com'
+          .col-md-12
+            = f.label :password, class: "label-form"
+            br
+            = f.password_field :password, autocomplete: "current-password", class: "form-label"
+            - if devise_mapping.rememberable?
+          .col-md-1
+            = f.check_box :remember_me
+          .col-md-11
+            = f.label :remember_me
+          = render "devise/shared/links"
+          .col-md-12.logbutton
+            .actions
+              = f.submit "Log in", class: "btn btn-primary"
+

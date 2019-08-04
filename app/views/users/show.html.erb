@@ -1,0 +1,35 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+
+<%= current_user.profile.first_name %> 
+
+
+<%# @users.each do |u| %>
+  
+<h1>Update Profile</h1>
+
+<%#= current_user.profile do |f| %>
+
+<%= form_for current_user.profile, url: {:controller => :users, :action => :updateprofile} do |f| %>
+
+    <div class="field">
+      <%= f.label :image %></label>
+      <%= f.file_field :avatar %>
+    </div>
+
+    <div class="field">
+      <%= f.label :firstname %>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :lastname %>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <%= f.submit %>
+
+
+<% end %>
+

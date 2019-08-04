@@ -1,0 +1,87 @@
+.titlenew
+  h1 Information Details
+
+.formbody
+  .logbody
+    .row.forminfo
+      .formcon
+        #notice = notice
+        .col-md-12
+          - if @student.avatar.attached?
+          = image_tag url_for(@student.avatar), class: "student-photo"
+        .col-md-12
+          .label-form Name:
+          .form-label = @student.full_name 
+        .col-md-6
+          .label-form Contact Number:
+          .form-label = @student.mobile
+        .col-md-6
+          .label-form Birthday :
+          .form-label = @student.birthday  
+        .col-md-6
+          .label-form Gender:
+          .form-label = @student.gender
+        .col-md-6
+          .label-form Birth Place
+          .form-label = @student.birth_place 
+        .col-md-12
+          .label-form Address :
+          .form-label = @student.address 
+        .col-md-6
+          .label-form Mother Name:
+          .form-label = @student.mother_name  
+        .col-md-6
+          .label-form Father Name:
+          .form-label = @student.fathe_name 
+        .col-md-6
+          .label-form Mother Occupatiion:
+          .form-label = @student.mother_occupation
+        .col-md-6
+          .label-form Father Occupatiion:
+          .form-label = @student.father_occupation
+        .col-md-6
+          .label-form Gaurdian Name:
+          .form-label = @student.gaurdian_name
+        .col-md-6
+          .label-formGaurdian Mobile number:
+          .form-label = @student.gaurdian_num
+        .col-md-12 
+          .subjects-details Subject Details
+      
+      table align="center" border="0px" width="90%"
+        thead
+          tr
+            th Subject name
+            th Subject description
+            th Time
+            th Day
+            th Course
+            th Section
+            th Teacher
+            th Student
+            th Rsoom
+            th colspan="3"
+        tbody
+        tr
+          - @student.subjects.each do |s|
+            - s.teachers.each do |t|
+              - s.classrooms.each do |c|
+                tr
+                  td = s.subject_name
+                  td = s.sbject_description
+                  td = s.time
+                  td = s.day 
+                  td = s.course
+                  td = s.section
+                  td = t.teacher_name
+                  td = link_to 'Show', s
+                  td = c.room_one
+      .buttonss
+        .col-md-6
+          .actions
+            = link_to 'Edit', edit_student_path(@student), class: "btn btn-primary"
+        .col-md-6
+          = link_to 'Back', students_path, class: "btn btn-primary"
+
+
+
